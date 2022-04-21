@@ -149,7 +149,7 @@ import './index.css';
     }
 
     handleClick(i) {
-        const history = this.state.history;
+        const history = this.state.history.slice(0,this.state.stepNumber + 1);
         const current = history[history.length - 1];
         const squares = current.squares.slice();
         if (calculateWinner(squares) || squares[i]) {
@@ -174,7 +174,7 @@ import './index.css';
     // render함수의 가장 최근 기록을 사용하도록 업데이트 -> 게임 상태를 확인하고 표시
     render() {
       const history = this.state.history;
-      const current = history[history.length - 1];
+      const current = history[this.state.stepNumber];
       const winner = calculateWinner(current.squares);
 
       // history mapping
