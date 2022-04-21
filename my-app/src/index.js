@@ -16,7 +16,7 @@ class Square extends React.Component {
     //     this.state = {
     //         value: null,
     //     };
-    //}
+    //} 
 
     render() {
       return (
@@ -50,6 +50,8 @@ class Square extends React.Component {
     renderSquare(i) {
         // return 뒤에 ()를 추가하여 {} 이후 ;를 삽입하지 않아도 됨
       return (
+        // 이벤트 나타내는 prop - on[Event]
+        // 이벤트 처리하는 함수 - handle[Event]
         <Square 
             value={this.state.squares[i]} 
             onClick={() => this.handleClick(i)}
